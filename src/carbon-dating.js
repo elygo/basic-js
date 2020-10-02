@@ -9,7 +9,7 @@ module.exports = function dateSample(sampleActivity) {
     return false;
   } else {
     k = 0.693/HALF_LIFE_PERIOD;
-    t = Math.log2(MODERN_ACTIVITY/numActivity) / k;
+    t = Math.log2(MODERN_ACTIVITY/Number(sampleActivity)) / k;
   }
 
   return Math.ceil(t);
