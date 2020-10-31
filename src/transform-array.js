@@ -1,9 +1,14 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function transform(arr) {
-  if ( arr === undefined || arr === null || arr.length === 0){
+  console.log(arr);
+  if ( arr === undefined || arr === null ){
     throw new CustomError('Error');
-  } else {
+  } else if(!Array.isArray(arr) || !arr) {
+    throw 'Error';
+  } else if(!Array.isArray(arr) && arr.length === 0){
+    
+}  else {
     let newArray = [];
     for(var i=0; i < arr.length; i++){
       if(arr[i] === '--discard-prev'){
